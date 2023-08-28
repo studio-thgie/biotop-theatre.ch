@@ -1,6 +1,6 @@
 <?php
 
-    add_filter('jpeg_quality', function($arg){return 95;});
+add_filter('jpeg_quality', function($arg){return 95;});
  
     if ( ! function_exists( 'biotop_setup' ) ) {
         function biotop_setup() {

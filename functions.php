@@ -21,9 +21,9 @@
         //wp_enqueue_style( 'normalize', get_template_directory_uri() . '/assets/normalize.css', array(), '1.0', 'all');
         wp_deregister_script('jquery');
 
-        if( pll_current_language() == 'fr' ) {
+        /* if( pll_current_language() == 'fr' ) {
         } else {
-        }
+        } */
     }
 
     add_action( 'wp_enqueue_scripts', 'enqueue_files' ); 

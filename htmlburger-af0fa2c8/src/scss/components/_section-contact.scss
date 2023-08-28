@@ -1,0 +1,125 @@
+/* ------------------------------------------------------------ *\
+	Section Contact
+\* ------------------------------------------------------------ */
+
+.section-contact {
+
+	.section__wrapper + .section__wrapper,
+	.section__image {
+		border-top: 2px solid $c-black;
+	}
+
+	.section__wrapper {
+		padding: 1.5rem 0;
+	}
+
+	.section__map {
+		border: solid $c-black;
+		border-width: 2px 0;
+	}
+
+	.section__content {
+		max-width: 80rem;
+	}
+
+	.section__content > a {
+		display: block; 
+		text-decoration: none; 
+	}
+
+	.section__content address {
+		margin-bottom: 1.8rem; 
+	}
+
+	.section__content address p {
+		margin-bottom: 0; 
+	}
+
+	.section__content address a,
+	.section__content > p > a {
+		text-decoration: underline; 
+	}
+
+	.section__content address > a,
+	.section__content address > span {
+		display: block; 
+	}
+
+	.section__content > p:not(:last-child) {
+		margin-bottom: 1.8rem; 
+	}
+
+	.section__content > p + h3 {
+		margin-top: 2.4rem; 
+	}
+
+	.section__content h3 {
+		margin-bottom: .5rem; 
+	}
+
+	.section__content ul {
+		list-style-type: none;
+
+		@include breakpoint-down(mobile-medium) {
+		  	line-height: 1.18; 
+		}  
+	}
+
+	.section__content ul h3 {
+		font-weight: 400; 
+		text-transform: none; 
+		font-family: $ff-sans-serif; 
+		margin-bottom: 0; 
+	}
+
+	.section__content ul p {
+		margin-bottom: 0; 
+	}
+
+	.section__content ul a {
+		transition: color .3s;
+
+		&:hover {
+			text-decoration: underline; 
+			color: $c-base;
+		}
+	}
+
+	.section__content ul li + li {
+		margin-top: 1.85rem; 
+
+		@include breakpoint-down(mobile-medium) {
+		  	margin-top: 2rem; 
+		}  
+	}
+
+	.section__map {
+		width: 100%;
+		height: 40.9rem;
+
+		@include breakpoint-down(tablet) {
+			height: 39.4rem;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	.section__image {
+		width: 100%;
+		height: 24.7rem;
+
+		@include breakpoint-down(mobile-medium) {
+			height: 20rem;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}

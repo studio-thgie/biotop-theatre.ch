@@ -1,0 +1,38 @@
+//Variables
+$font-size-base             : 1.6rem;
+$font-weight-base           : 400;
+$line-height-base           : 1.20;
+
+$ff-sans-serif              : 'Beausite Classic Web', sans-serif;
+$ff-sans-serif-alt          : 'Epoque Grotesk', sans-serif;
+$ff-serif                   : Georgia, "Times New Roman", Times, serif;
+
+$t-duration                 : 0.3s;
+
+$shell-max-width            : 126rem;
+$shell-gutter               : 13rem;
+$shell-gutter-alt           : 9.3rem;
+$shell-gutter-desktop       : 3.6rem;
+$shell-gutter-mobile        : 1.5rem;
+
+$c-black                    : #000;
+$c-white                    : #fff;
+$c-base                     : #F00000;
+$c-mint                     : #5BFFC4;
+$c-pink                     : #EA5060;
+$c-purple                   : #503244;
+$c-yellow                   : #F1F138;
+$c-lightgreen               : #DEDE42;
+$c-blue                     : #4D5BA8;
+
+$responsive-ios             : 812px;
+
+$breakpoints: (
+	mobile-small: 374px,
+	mobile-medium: 575px,
+	mobile: 767px,
+	admin-bar: 782px,
+	tablet: 1023px,
+	small-desktop: 1199px,
+	large-desktop: 1399px
+);

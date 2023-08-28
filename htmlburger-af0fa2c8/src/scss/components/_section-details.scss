@@ -1,0 +1,101 @@
+/* ------------------------------------------------------------ *\
+	Section Details
+\* ------------------------------------------------------------ */
+
+.section-details {
+
+	.section__entry {
+		border-top: 2px solid $c-black;
+		padding: 1.4rem 0;
+	}
+
+	.section__content {
+		max-width: 80rem;
+		line-height: 1.18; 
+	}
+
+	.section__content > p {
+		max-width: 72.7rem;
+	}
+
+	.section__content > p:not(:last-child) {
+		margin-bottom: 2rem; 
+	}
+
+	.section__content p > span {
+		display: block; 
+	}
+
+	.section__content ul,
+	.section__content ol {
+		list-style-type: none; 
+	}
+
+	.section__content ul li {
+		position: relative; 
+		padding-left: 2.4rem; 
+
+		&:before {
+			content: '';
+			width: .4rem;
+			height: .4rem;
+			border-radius: 50%;
+			background-color: $c-black;
+			position: absolute; 
+			top: .7rem;
+			left: .9rem;
+		}
+	}
+
+	.section__content ul li + li {
+		margin-top: .01rem; 
+	}
+
+	.section__content > a {
+		text-decoration: none; 
+		display: block; 
+		font-size: 2rem; 
+		transition: color .3s;
+
+		&:hover {
+			color: $c-base;
+		}
+	}
+
+	.section__content a + a {
+		margin-top: .4rem; 
+	}
+
+	.section__content h3 + ol {
+		margin-top: .8rem; 
+	}
+
+	.section__content ol {
+		font-size: 2rem;
+		line-height: .8; 
+	}
+
+	.section__content ol li + li {
+		margin-top: .7rem; 
+	}
+
+	.section__content ol:not(:last-child) {
+		margin-bottom: 2.5rem;  
+	}
+
+	.section__content ol li p {
+		margin-bottom: 0; 
+		line-height: .97; 
+	}
+
+	.section__content ol li span {
+		font-size: 1.6rem; 
+	}
+
+	.section__content ol a {
+
+		&:hover {
+			text-decoration: underline; 
+		}
+	}
+}

@@ -1,0 +1,65 @@
+/* ------------------------------------------------------------ *\
+  Shell
+\* ------------------------------------------------------------ */
+
+.shell {
+	max-width: calc( #{$shell-max-width} + #{$shell-gutter} * 2 );
+	padding-left: $shell-gutter;
+	padding-right: $shell-gutter;
+	margin: auto;
+	width: 100%;
+
+	@include breakpoint-down(small-desktop) {
+		max-width: calc( #{$shell-max-width} + #{$shell-gutter-desktop} * 2 );
+		padding-left: $shell-gutter-desktop;
+		padding-right: $shell-gutter-desktop;
+	}
+
+	@include breakpoint-down(mobile-small) {
+		max-width: calc( #{$shell-max-width} + #{$shell-gutter-mobile} * 2 );
+		padding-left: $shell-gutter-mobile;
+		padding-right: $shell-gutter-mobile;
+	}
+}
+
+.shell--alt {
+	max-width: calc( #{$shell-max-width} + #{$shell-gutter-alt} * 2 );
+	padding-left: $shell-gutter-alt;
+	padding-right: $shell-gutter-alt;
+
+	@include breakpoint-down(small-desktop) {
+		max-width: calc( #{$shell-max-width} + #{$shell-gutter-desktop} * 2 );
+		padding-left: $shell-gutter-desktop;
+		padding-right: $shell-gutter-desktop;
+	}
+
+	@include breakpoint-down(mobile-small) {
+		max-width: calc( #{$shell-max-width} + #{$shell-gutter-mobile} * 2 );
+		padding-left: $shell-gutter-mobile;
+		padding-right: $shell-gutter-mobile;
+	}
+}
+
+.shell--large {
+	max-width: calc( #{$shell-max-width} + #{3.6rem} * 2 );
+	padding-left: 3.6rem;
+	padding-right: 3.6rem;
+
+	@include breakpoint-down(small-desktop) {
+		max-width: calc( #{$shell-max-width} + #{$shell-gutter-desktop} * 2 );
+		padding-left: $shell-gutter-desktop;
+		padding-right: $shell-gutter-desktop;
+	}
+
+	@include breakpoint-down(mobile-small) {
+		max-width: calc( #{$shell-max-width} + #{$shell-gutter-mobile} * 2 );
+		padding-left: $shell-gutter-mobile;
+		padding-right: $shell-gutter-mobile;
+	}
+}
+
+/* Shell Fluid */
+
+.shell--fluid {
+	max-width: none;
+}

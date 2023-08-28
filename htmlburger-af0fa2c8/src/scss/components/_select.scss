@@ -1,0 +1,107 @@
+/* ------------------------------------------------------------ *\
+	Select
+\* ------------------------------------------------------------ */
+
+.select {
+	border: 2px solid $c-black;
+
+	option[value="placeholder"] {
+		display: none; 
+	}
+
+	.select2-container,
+	.select2-dropdown {
+		position: static!important;
+		width: 100%!important; 
+		background-color: transparent; 
+	}
+
+	.select2-search {
+		display: none; 
+	}
+
+	.select2-container--default .select2-selection--single .select2-selection__rendered {
+		height: 4.1rem;
+		padding: 0 1rem;
+		line-height: 4.1rem;
+
+		@include breakpoint-down(small-desktop) {
+		 	padding: 0 .8rem;
+		 } 
+	}
+
+	.select2-container {
+		background-color: $c-white; 
+	}
+
+	.select2-selection {
+		border: 0;
+		width: 100%;
+		height: 4.1rem;
+		border-radius: 0;
+	}
+
+	.select2-container--default .select2-selection--single .select2-selection__placeholder {
+		color: $c-black;
+	}
+
+	.select2-dropdown {
+		border: 0;
+		border-radius: 0;
+		margin-top: -.4rem;
+	}
+
+	.select2-results {
+		background-color: $c-white; 
+		padding-bottom: .5rem;  
+	}
+
+	.select2-results__option {
+		transition: color .3s;
+		padding: .5rem 1rem;
+
+		@include breakpoint-down(small-desktop) {
+		 	padding: .5rem .8rem;
+	 } 
+	}
+
+	.select2-results__option.select2-results__option--highlighted {
+		color: $c-base; 
+	}
+
+	.select2-results__option.select2-results__option--highlighted,
+	.select2-results__option.select2-results__option--selected {
+		background-color: transparent;
+	}
+
+	span.selection {
+		position: relative; 
+	}
+
+	.select2-container--default .select2-selection--single .select2-selection__arrow {
+		height: 4.1rem;
+		top: 0;
+		right: 1.7rem;
+		width: 2rem;
+
+		&:after {
+			content: '';
+			display: block; 
+			width: 100%;
+			height: 100%;
+			background: url(./images/svg/arrow-down.svg); 
+			background-size: 100%;
+			background-position: center; 
+			background-repeat: no-repeat; 
+			transition: transform .3s; 
+		}
+	}
+
+	.select2-container.select2-container--open .select2-selection__arrow:after {
+		transform: rotate(180deg);
+	}
+
+	.select2-container--default .select2-selection--single .select2-selection__arrow b {
+		display: none; 
+	}
+}

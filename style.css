@@ -1,0 +1,11 @@
+/*!
+    Theme Name: Biotop
+    Theme URI: https://www.biotop.ch
+    Author: Adrian Demleitner
+    Author URI: https://thgie.ch
+    Version: 1.0
+    Text Domain: biotop
+*/
+
+/* import htmlburger styles */
+@import url('assets/style.css');

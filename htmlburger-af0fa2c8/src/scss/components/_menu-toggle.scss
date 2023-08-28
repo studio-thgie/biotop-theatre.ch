@@ -1,0 +1,36 @@
+/* ------------------------------------------------------------ *\
+	Menu Toggle
+\* ------------------------------------------------------------ */
+
+.menu-toggle {
+	cursor: pointer;
+	display: block; 
+	width: fit-content;
+
+	span {
+		display: block; 
+		width: 3.2rem;
+		height: .3rem;
+		background-color: $c-black; 
+		transition: opacity $t-duration, transform $t-duration;
+	}
+
+	span + span {
+		margin-top: .8rem; 
+	}
+}
+
+.menu-toggle.is-active {
+
+	span:first-child {
+		transform: translateY(11px) rotate(-45deg);
+	}
+
+	span:nth-child(2) {
+		transform: rotate(45deg);
+	}
+
+	span:last-child {
+		opacity: 0;
+	}
+}

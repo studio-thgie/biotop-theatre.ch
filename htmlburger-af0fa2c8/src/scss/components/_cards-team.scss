@@ -1,0 +1,24 @@
+/* ------------------------------------------------------------ *\
+	Cards Team
+\* ------------------------------------------------------------ */
+
+.cards-team {
+
+	.cards__items {
+		display: grid; 
+		grid-template: auto / repeat(4, 1fr);
+		grid-gap: 3rem 1.5rem;
+
+		@include breakpoint-down(large-desktop) {
+			grid-template: auto / repeat(3, 1fr);
+		}
+
+		@include breakpoint-down(tablet) {
+			grid-template: auto / repeat(2, 1fr);
+		}
+
+		@include breakpoint-down(mobile) {
+			grid-template: auto / repeat(1, 1fr);
+		}
+	}
+}

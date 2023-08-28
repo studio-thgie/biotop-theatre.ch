@@ -1,0 +1,259 @@
+/* ------------------------------------------------------------ *\
+	Section Nav
+\* ------------------------------------------------------------ */
+
+.section-nav {
+
+	.section__menu {
+		width: 100%;
+		border-bottom: 2px solid $c-black;
+	}
+
+	.section__menu--image,
+	.section__menu--no-border {
+		border-bottom: 0; 
+	}
+
+	.section__menu a {
+		text-decoration: none; 
+		display: flex; 
+		align-items: center;
+		justify-content: space-between;
+		padding: .9rem 2rem .9rem 0;
+		transition: color $t-duration;
+
+		@include breakpoint-down(small-desktop) {
+			padding: .9rem 0;
+			margin-right: -2rem; 
+		}
+
+		@include breakpoint-down(mobile-medium) {
+			align-items: flex-start;
+		}
+
+		@include breakpoint-down(mobile-small) {
+			margin-right: 0; 
+		}
+
+		&:hover {
+			color: $c-base;
+		}
+	}
+
+	.section__menu a img {
+		transition: transform $t-duration;
+
+		@include breakpoint-down(mobile-medium) {
+			margin-top: .5rem; 
+		}
+	}
+
+	.section__menu a.is-expanded img {
+		transform: rotate(180deg);
+	}
+
+	.section__image {
+		width: 100%;
+		aspect-ratio: 1 / .39;
+
+		@include breakpoint-down(small-desktop) {
+			aspect-ratio: 1 / .42;
+		}
+
+		@include breakpoint-down(tablet) {
+			aspect-ratio: 1 / .48;
+		}
+
+		@include breakpoint-down(mobile-medium) {
+			aspect-ratio: 1 / .63;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	.section__image--small {
+		aspect-ratio: 1 / .24;
+
+		@include breakpoint-down(small-desktop) {
+			aspect-ratio: 1 / 0.26;
+		}
+
+		@include breakpoint-down(tablet) {
+			aspect-ratio: 1 / 0.48;
+		}
+
+		@include breakpoint-down(mobile-medium) {
+			aspect-ratio: 1 / 0.63;
+		}
+	}
+
+	.section__menu.section__menu--yellow .section__item a,
+	.section__submenu .section__menu--yellow a {
+
+		&:hover {
+			color: $c-lightgreen;
+		}
+	}
+
+	.section__menu.section__menu--blue .section__item a,
+	.section__submenu .section__menu--blue a  {
+
+		&:hover {
+			color: $c-blue;
+		}
+	}
+
+	.section__menu.section__menu--purple .section__item a,
+	.section__submenu .section__menu--purple a  {
+
+		&:hover {
+			color: $c-purple;
+		}
+	}
+
+	.section__menu.section__menu--pink .section__item a,
+	.section__submenu .section__menu--pink a  {
+
+		&:hover {
+			color: $c-pink;
+		}
+	}
+
+	.section__menu h2 {
+		margin-bottom: 0; 
+		padding-right: 1rem; 
+	}
+
+	.section__menu--image,
+	.section__menu--image-alt,
+	.section__menu--image-xsmall,
+	.section__menu--image-large,
+	.section__menu--image-large-alt,
+	.section__menu--image-small {
+		overflow: hidden;
+		position: relative;
+		height: 24.7rem;
+
+		@include breakpoint-down(mobile) {
+			height: 15.2rem;
+		}
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	.section__menu--image-xsmall {
+		height: 3.6rem;
+	}
+
+	.section__menu--image-alt {
+		height: 24.7rem;
+	}
+
+	.section__menu--image-large {
+		height: unset;
+		aspect-ratio: 1 / .31;
+
+		@include breakpoint-down(small-desktop) {
+			aspect-ratio: 1 / .33;
+		}
+
+		@include breakpoint-down(tablet) {
+			aspect-ratio: 1 / .48;
+		}
+
+		@include breakpoint-down(mobile-medium) {
+			aspect-ratio: 1 / .63;
+		}
+	}
+
+	.section__menu--image-large-alt {
+		height: unset;
+		aspect-ratio: 1 / .31;
+
+		@include breakpoint-down(small-desktop) {
+			aspect-ratio: unset;
+			height: 24.7rem;
+		}
+
+		@include breakpoint-down(mobile-medium) {
+			height: 19.9rem;
+		}
+	}
+
+	.section__menu--image-small {
+		height: unset;
+		aspect-ratio: 1 / .3;
+
+		@include breakpoint-down(small-desktop) {
+			aspect-ratio: 1 / .31;
+		}
+
+		@include breakpoint-down(tablet) {
+			aspect-ratio: 1 / .45;
+		}
+
+		@include breakpoint-down(mobile-medium) {
+			aspect-ratio: 1 / .64;
+		}
+	}
+
+	.section__menu--logo {
+		background-color: $c-lightgreen;
+		text-align: center;  
+		padding: 2.8rem 0;
+		border-bottom: 0; 
+
+		@include breakpoint-down(tablet) {
+			padding: 2.3rem 10.2rem;
+		}
+
+		@include breakpoint-down(mobile) {
+			padding: 2.3rem 1.7rem;
+		}
+	}
+
+	.section__submenu {
+		list-style-type: none; 
+		font-size: 2rem; 
+		display: none; 
+	}
+
+	.section__submenu li {
+		padding: 0 2.6rem;
+	}
+
+	.section__submenu li + li {
+		border-top: 2px solid $c-black;
+	}
+
+	.section__submenu li a {
+
+		&:hover {
+			color: $c-base;
+		}
+	}
+
+	.section__submenu li a p {
+		margin-bottom: 0; 
+		max-width: 25rem;
+	}
+
+	.section__submenu li img {
+		max-width: 1.8rem;
+	}
+
+	.section__content {
+		padding: 1rem 0 1.5rem;
+	}
+}

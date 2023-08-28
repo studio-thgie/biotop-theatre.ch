@@ -1,0 +1,113 @@
+/* ------------------------------------------------------------ *\
+	Footer
+\* ------------------------------------------------------------ */
+
+.footer {
+	background-color: $c-black;
+	color: $c-white;
+	font-size: 2rem; 
+	line-height: 1.20;
+	padding: 3.2rem 0 10rem; 
+
+	.footer__shell {
+		display: flex; 
+		grid-gap: 8rem;
+
+		@include breakpoint-down(large-desktop) {
+			grid-gap: 3.7rem;
+		}
+
+		@include breakpoint-down(tablet) {
+			flex-wrap: wrap;
+			grid-gap: 3rem 3.7rem;
+		}
+
+		@include breakpoint-down(mobile-medium) {
+			flex-direction: column;
+		}
+	} 
+
+	.footer__locations {
+		display: flex; 
+		width: fit-content;
+		grid-gap: 8rem;
+
+		@include breakpoint-down(large-desktop) {
+			grid-gap: 4rem;		
+		}
+
+		@include breakpoint-down(mobile-medium) {
+			flex-direction: column;
+			grid-gap: 3rem;	
+		}
+	}
+
+	.footer__location {
+		width: fit-content;
+	}
+
+	.footer__location p,
+	.footer__location a {
+		margin-bottom: 0; 
+		display: block; 
+		width: 100%;
+	}
+
+	.footer__location a {
+		cursor: pointer;
+		transition: opacity .3s;
+
+		&:hover {
+			opacity: .7;
+		}
+	}
+
+	.footer__location a[href^="mailto"] {
+
+		&:hover {
+			text-decoration: underline; 
+		}
+	}
+
+	.footer__location a + ul {
+		margin-top: 1rem; 
+	}
+
+	.footer__location ul {
+		list-style-type: none; 
+		display: flex; 
+	}
+
+	.footer__location ul li + li {
+		margin-left: .9rem; 
+	}
+
+	.footer__newsletter {
+
+		@include breakpoint-down(large-desktop) {
+			padding-left: .6rem; 
+		}
+
+		@include breakpoint-down(tablet) {
+			padding-left: 0; 
+		}
+	}
+
+	.footer__newsletter p {
+		margin-bottom: .3rem; 
+	}
+
+	.footer__newsletter a {
+		text-underline-offset: 9px;
+		text-decoration-thickness: .2rem;
+		transition: color $t-duration;
+
+		&:hover {
+			text-decoration: underline; 
+			text-underline-offset: 9px;
+			text-decoration-thickness: .2rem;
+			text-decoration-color: $c-white;
+			color: $c-base;
+		}
+	}
+}

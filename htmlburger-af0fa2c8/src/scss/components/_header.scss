@@ -1,0 +1,85 @@
+/* ------------------------------------------------------------ *\
+	Header
+\* ------------------------------------------------------------ */
+
+.header {
+	position: relative;
+
+	.header__wrapper {
+		border-bottom: 2px solid $c-black; 
+		padding: 4.8rem 0 2.2rem;
+		background-color: $c-white; 
+		position: relative; 
+		z-index: 101; 
+	}
+
+	.header__shell {
+		display: flex; 
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.header__logo {
+		margin: 0 2rem;
+	}
+
+	.header__menu {
+		background-color: $c-white; 
+		border-bottom: 2px solid $c-black; 
+		padding: 1.3rem 0;
+		position: absolute; 
+		top: 100%;
+		left: 0;
+		z-index: 100;
+		width: 100%;
+		display: block; 
+		transform: translateY(-10vh);
+		opacity: 0;
+		pointer-events: none;
+		transition: transform $t-duration, opacity $t-duration;
+	}
+
+	.header__menu.is-active {
+		transform: translateY(0);
+		opacity: 1;
+		pointer-events: all;
+	}
+
+	.header__toggle {
+		overflow: hidden;
+		padding-top: 1rem; 
+
+		@include breakpoint-down(tablet) {
+			padding-top: 0; 
+		}
+	}
+
+	.header__toggle,
+	.header__lang {
+		width: 15%;
+
+		@include breakpoint-down(mobile-small) {
+			width: 20%;
+		}
+	}
+
+	.header__lang ul {
+		margin: 0 0 0 auto;
+		width: fit-content;
+	}
+
+	.header__arrow {
+		position: fixed; 
+		bottom: 2rem;
+	 	right: 2rem;
+	 	z-index: 100;
+	 	opacity: 0;
+	 	visibility: hidden;
+	 	transition: opacity .3s, visibility .3s;
+
+	 	&.is-visible {
+	 		opacity: 1;
+	 		visibility: visible
+	 	}
+	}
+}

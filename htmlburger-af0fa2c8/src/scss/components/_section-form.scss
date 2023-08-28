@@ -1,0 +1,19 @@
+/* ------------------------------------------------------------ *\
+	Section Form
+\* ------------------------------------------------------------ */
+
+.section-form {
+	background-color: $c-yellow; 
+	padding: 2rem 0;
+
+	@include breakpoint-down(mobile-medium) {
+		padding: 1rem 0;
+	}
+
+	.section__form {
+
+		@include breakpoint-down(small-desktop) {
+			max-width: 80rem;
+		}
+	}
+}

@@ -1,0 +1,20 @@
+/* ------------------------------------------------------------ *\
+	Section Articles
+\* ------------------------------------------------------------ */
+
+.section-articles {
+
+	.section__icon {
+		background-color: $c-purple; 
+		text-align: center;
+		padding: 1.4rem;
+		min-height: 24.7rem;
+		display: flex; 
+		align-items: center;
+		justify-content: center;
+	}
+
+	.section__icon--pink {
+		background-color: $c-pink;
+	}
+}

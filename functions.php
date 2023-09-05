@@ -11,7 +11,14 @@ add_filter('jpeg_quality', function($arg){return 95;});
             ) );
             add_theme_support( 'post-thumbnails' );
 
-            // add_image_size( 'gallery', 1000, 500 );
+            /**
+             * Add Custom Image Sizes
+             */
+            add_image_size( 'event-preview', 900, 600, true);
+            add_image_size( 'header-slideshow', 1280, 500 );
+            add_image_size( 'event-header', 1920, 9999 );
+            add_image_size( 'team-member', 378, 567 );
+            add_image_size( 'downloads', 600, 600 );
         }
     }
     add_action( 'after_setup_theme', 'biotop_setup' );

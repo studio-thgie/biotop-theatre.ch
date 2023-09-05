@@ -36,10 +36,6 @@
                         </div><!-- /.section__image -->
                     <?php endif;
             
-                    if( get_row_layout() == 'gallery' ): ?>
-                        
-                    <?php endif;
-            
                     if( get_row_layout() == 'links' ): ?>
                         <section class="section-nav">
                         <?php 

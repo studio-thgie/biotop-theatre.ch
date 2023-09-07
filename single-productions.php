@@ -20,7 +20,6 @@
             <?php if ( has_post_thumbnail() ) : ?>
                 <div class="section__image section__image--large">
                     <?php the_post_thumbnail(); ?>
-                    <img src="./assets/images/temp/tickets-image.jpg" alt="">
                 </div><!-- /.section__image -->
             <?php endif; ?>
 

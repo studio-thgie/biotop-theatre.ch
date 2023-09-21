@@ -109,6 +109,8 @@
 			</div><!-- /.section__container -->
 		</section><!-- /.section-tickets -->
 
+        <?php get_template_part('parts/content'); ?>
+
         <?php if( have_rows('content_block') ): ?>
 		    <section class="section-details">
                 <?php while ( have_rows('content_block') ) : the_row(); ?>

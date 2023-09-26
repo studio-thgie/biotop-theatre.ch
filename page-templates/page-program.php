@@ -36,10 +36,14 @@
 			<div class="section__filters">
 				<div class="shell">
 					<ul class="list-filters">
-                        <?php foreach( $field['choices'] as $k => $v ): ?>
-
+                        <?php if(isset($_GET['category'])) : ?>
                             <li>
-                                <a href="<?= $k ?>"><?= $v ?></a>
+                                <a href="?">&nbsp;X&nbsp;</a>
+                            </li>
+                        <?php endif; ?>
+                        <?php foreach( $field['choices'] as $k => $v ): ?>
+                            <li <?= $k == 'incubo' ? 'class="list__item-blue"' : '' ?>>
+                                <a href="?category=<?= $k ?>"><?= $v ?></a>
                             </li>
                         <?php endforeach; ?>
 						
@@ -47,13 +51,9 @@
 							<a href="?school"><?php _e( 'school', 'biotop' ); ?></a>
 						</li>
 						
-						<li class="list__item-blue">
-							<a href="?incubo">Incubo</a>
-						</li>
-						
-						<li class="list__item-black">
+						<!--<li class="list__item-black">
 							<a href="?off-season"><?php _e( 'off-season', 'biotop' ); ?></a>
-						</li>
+						</li>-->
 					</ul><!-- /.list-filters -->
 				</div><!-- /.shell -->
 			</div><!-- /.section__filters -->
@@ -111,7 +111,7 @@
 
             ?>
 
-			<div class="section__entry"> <!-- section__entry--blue section__entry--white -->
+                <div class="section__entry <?= get_field('event_category', $p->ID)['value'] == 'incubo' ? 'section__entry--blue' : '' ?>"> <!--  section__entry--white -->
 				<div class="shell">
 					<div class="card-event">
 						<div class="card__tags">
@@ -120,7 +120,7 @@
                                     <li><?= get_field('event_category', $p->ID)['label']; ?></li>
                                 <?php endif; ?>
                                 <?php if(get_field('premiere')): ?>
-                                    <li>Premiere</li>
+                                    <li><?= _e('premiere', 'biotop'); ?></li>
                                 <?php endif; ?>
 								
 							</ul>
@@ -219,7 +219,7 @@
                         <?php
 					
                             $reservation = true;
-                            $link = '/' . ICL_LANGUAGE_CODE . '/reservation?id=' . get_the_ID();
+                            $link = get_field('tickets_page', 'option') . '?id=' . get_the_ID();
                             $target = '_self';
                         
                             if(!is_null(get_field('reservation_activated'))){

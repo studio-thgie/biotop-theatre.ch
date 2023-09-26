@@ -50,26 +50,19 @@
 		
 				<div class="footer__nav">
 					<nav class="nav-footer">
-						<ul>
-							<li>
-								<a href="#">Impressum</a>
-							</li>
-		
-							<li>
-								<a href="#">Datenschutz</a>
-							</li>
-							
-							<li>
-								<a href="#">AGB</a>
-							</li>
-						</ul>
+						<?php wp_nav_menu([
+								'menu' => 'footer',
+								'container' => '',
+								'fallback_cb' => false
+							]);
+						?>
 					</nav><!-- /.nav-footer -->
 				</div><!-- /.footer__nav -->
 				
 				<div class="footer__newsletter">
-					<p>Abonnieren Sie unseren</p>
+					<p><?php _e('subscribe', 'biotop'); ?></p>
 					
-					<a href="newsletter-subscription.html">
+					<a href="<?php the_field('newsletter_page', 'option'); ?>">
 						<h2>Newsletter</h2>
 					</a>
 				</div><!-- /.footer__newsletter -->
@@ -77,8 +70,16 @@
 		</footer><!-- /.footer -->
 	</div><!-- /.wrapper -->
 
-    <script type="text/javascript" src="<?= get_template_directory_uri() ?>/assets/vendor/jquery-3.6.3.min.js"></script>
+    <!--<script type="text/javascript" src="<?= get_template_directory_uri() ?>/assets/vendor/jquery-3.6.3.min.js"></script>-->
+	
+	<?php wp_footer(); ?> 
+	<script>
+
+		let $ = jQuery;
+
+	</script>
 	<script type="text/javascript" src="<?= get_template_directory_uri() ?>/assets/vendor/infiniteslidev2.min.js"></script>
+    <script type="module" crossorigin src="<?= get_template_directory_uri() ?>/assets/app23.js"></script>
 	
 </body>
 </html>

@@ -7,7 +7,8 @@
         
             load_theme_textdomain( 'biotop', get_template_directory() . '/languages' );
             register_nav_menus( array(
-                'main'   => __( 'Main Menu', 'biotop' )
+                'main'   => __( 'Main Menu', 'biotop' ),
+                'footer'   => __( 'Footer', 'biotop' )
             ) );
             add_theme_support( 'post-thumbnails' );
 
@@ -26,7 +27,7 @@
     function enqueue_files() {
         //wp_enqueue_style( 'style', get_stylesheet_uri() );
         //wp_enqueue_style( 'normalize', get_template_directory_uri() . '/assets/normalize.css', array(), '1.0', 'all');
-        wp_deregister_script('jquery');
+        //wp_deregister_script('jquery');
 
         /* if( pll_current_language() == 'fr' ) {
         } else {

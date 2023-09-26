@@ -27,64 +27,18 @@
 				<div class="section__entry">
 					<div class="shell">
                         <?php if(get_field('subtitle')): ?>
-						<div class="section__title">
-							<h3><?php the_field('subtitle'); ?></h3>
-						</div><!-- /.section__title -->
+                            <div class="section__title">
+                                <h3><?php the_field('subtitle'); ?></h3>
+                            </div><!-- /.section__title -->
                         <?php endif; ?>
 					
 						<div class="section__info">
-							<div class="section__icons">
-								<ul>
-									<li>
-										<img src="./assets/images/svg/theater-icon.svg" alt="">
-									</li>
-									
-									<li>
-										<div class="age-icon">
-											<p><?php the_field('age'); ?>+</p>
-										</div><!-- /.age-icon -->
-									</li>
-									
-									<li>
-										<div class="duration-icon">
-											<img src="./assets/images/svg/duration-icon.svg" alt="">
-											
-											<p><?php the_field('duration'); ?></p>
-										</div><!-- /.duration-icon -->
-									</li>
-
-                                    <?php if ( get_field('language') ) : ?>
-
-                                    <?php
-
-                                        if(get_field('override_language')) {
-                                            $langs = get_field('override_language');
-                                        } else {
-                                            $langs = get_field('language');
-                                        }
-
-                                    ?>
-									
-									<li>
-                                        <ul class="list-lang list-lang--single">
-                                            <?php foreach ($langs as $key => $lang): ?>
-                                                <li><?= $lang ?></li>
-                                            <?php endforeach; ?>
-                                        </ul>
-                                    </li>
-                                        
-                                    <?php endif; ?>
-
-									<li>
-										<img src="./assets/images/svg/school-icon.svg" alt="">
-									</li>
-								</ul>
-							</div><!-- /.section__icons -->
+                            <?php get_template_part('parts/production-meta', ['pid' => get_the_ID()]); ?>
 
                             <?php
 					
                                 $reservation = true;
-                                $link = '/' . ICL_LANGUAGE_CODE . '/reservation?id=' . get_the_ID();
+                                $link = get_field('tickets_page', 'option') . '?id=' . get_the_ID();
                                 $target = '_self';
                             
                                 if(!is_null(get_field('reservation_activated'))){
@@ -100,7 +54,7 @@
 
                             <?php if($reservation): ?>
                                 <div class="section__actions">
-                                    <a href="<?php echo $link; ?>" target="<?php echo $target; ?>" class="btn btn--block">Tickets</a>
+                                    <a href="<?= $link; ?>" target="<?= $target; ?>" class="btn btn--block">Tickets</a>
                                 </div>
                             <?php endif; ?>
 						</div><!-- /.section__info -->

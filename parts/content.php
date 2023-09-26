@@ -190,10 +190,32 @@
                 </div><!-- /.section-articles -->
             <?php endif;
     
-        endwhile;
+            if( get_row_layout() == 'form' ): ?>
+                <?php if(get_sub_field('style') == 'newsletter'): ?>
+                    <div class="section__form">
+                        <div class="shell">
+                            <div class="form form--small">
+                                <?= do_shortcode(get_sub_field('shortcode')); ?>
+                            </div><!-- /.form -->
+                        </div><!-- /.shell -->
+                    </div><!-- /.section__form -->
+                </section><!-- /.section-newsletter -->
+                <?php endif; ?>
+                <?php if(get_sub_field('style') == 'form'): ?>
+                    <section class="section-form">
+                        <div class="shell">
+                            <div class="section__form">
+                                <div class="form form--placeholders">
+                                    <?= do_shortcode(get_sub_field('shortcode')); ?>
+                                </div><!-- /.form -->
+                            </div><!-- /.section__form -->
+                        </div><!-- /.shell -->
+                    </section><!-- /.section-form -->
+                <?php endif; ?>
+                
+            <?php endif;
     
-    else :
-        print('Nothing to show here.');
+        endwhile;
     endif;
 
 ?>

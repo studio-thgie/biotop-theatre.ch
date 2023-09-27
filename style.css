@@ -9,3 +9,41 @@
 
 /* import htmlburger styles */
 @import url('assets/style.css');
+
+/* overriding styles */
+::placeholder {
+    color: black !important;
+    opacity: 1; /* Firefox */
+}
+
+::-ms-input-placeholder { /* Edge 12 -18 */
+    color: black !important;
+}
+
+.nf-form-content .list-select-wrap .nf-field-element > div,
+.nf-form-content input:not([type="button"]), .nf-form-content textarea {
+	border: 2px solid #000 !important;
+    color: black !important;
+	width: 100%;
+	height: 4.5rem !important;
+	line-height: 4.2rem !important;
+	padding: 0 1rem !important;
+	appearance: none !important;
+	-webkit-appearance: none !important;
+	border-radius: 0 !important;
+}
+
+#ninja_forms_required_items, .nf-field-container {
+	margin-bottom: 1rem !important;
+}
+
+.nf-error .nf-error-msg {
+    color: black !important;
+}
+
+.nf-error.field-wrap .nf-field-element::after {
+	top: 2px !important;
+	right: 2px !important;
+	bottom: 2px !important;
+	height: calc(100% - 4px) !important;
+}

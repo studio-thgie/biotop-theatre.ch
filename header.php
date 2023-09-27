@@ -11,7 +11,7 @@
 	<title><?php the_title(); ?> - <?php bloginfo('name'); ?></title>
 	<link rel="shortcut icon" type="image/x-icon" href="<?= get_template_directory_uri() ?>/assets/images/favicon.ico" />
 
-    <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/style.css">
+    <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/style.css">
 
     <?php wp_head(); ?>
 </head>

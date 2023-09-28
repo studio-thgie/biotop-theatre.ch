@@ -32,6 +32,11 @@
 	-webkit-appearance: none !important;
 	border-radius: 0 !important;
 }
+.nf-form-content button,
+.nf-form-content input[type="button"],
+.nf-form-content input[type="submit"] {
+	color: white !important;
+}
 
 #ninja_forms_required_items, .nf-field-container {
 	margin-bottom: 1rem !important;

@@ -70,14 +70,9 @@
 		</footer><!-- /.footer -->
 	</div><!-- /.wrapper -->
 
-    <!--<script type="text/javascript" src="<?= get_template_directory_uri() ?>/assets/vendor/jquery-3.6.3.min.js"></script>-->
-	
 	<?php wp_footer(); ?> 
-	<script>
 
-		let $ = jQuery;
-
-	</script>
+    <script type="text/javascript" src="<?= get_template_directory_uri() ?>/assets/vendor/jquery-3.6.3.min.js"></script>
 	<script type="text/javascript" src="<?= get_template_directory_uri() ?>/assets/vendor/infiniteslidev2.min.js"></script>
     <script type="module" crossorigin src="<?= get_template_directory_uri() ?>/assets/app23.js"></script>
 	

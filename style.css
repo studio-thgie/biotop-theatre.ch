@@ -52,3 +52,9 @@
 	bottom: 2px !important;
 	height: calc(100% - 4px) !important;
 }
+
+/* fix embed map */
+.section__map iframe {
+	width: 100% !important;
+	height: 100% !important;
+}

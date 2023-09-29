@@ -189,6 +189,37 @@
                     </div><!-- /.section__articles -->
                 </div><!-- /.section-articles -->
             <?php endif;
+
+            if( get_row_layout() == 'downloads' ): ?>
+                <section class="section-nav">
+                    <div class="section__menu">
+                        <div class="section__item">
+                            <div class="shell">
+                                <a href="#">
+                                    <h2><?= get_sub_field('title') ?></h2>
+                                    <img src="<?= get_template_directory_uri() ?>/assets/images/svg/arrow-down.svg" alt="">
+                                </a>
+                            </div><!-- /.shell -->
+                        </div><!-- /.section__item -->
+
+                        <ul class="section__submenu">
+                            <?php while( have_rows('files') ): the_row(); 
+                                $file = get_sub_field('file');
+                            ?>
+                                <li>
+                                    <div class="shell">
+                                        <a href="<?= $file['url'] ?>" download>
+                                            <?= $file['filename'] ?>
+                                    
+                                            <img src="<?= get_template_directory_uri() ?>/assets/images/svg/arrow-right.svg" alt="">
+                                        </a>
+                                    </div><!-- /.shell -->
+                                </li>
+                            <?php endwhile; ?>
+                        </ul><!-- /.section__submenu -->
+                    </div><!-- /.section__menu -->
+                </section><!-- /.section-nav -->
+            <?php endif;
     
             if( get_row_layout() == 'form' ): ?>
                 <?php if(get_sub_field('style') == 'newsletter'): ?>
@@ -214,6 +245,14 @@
                     </section><!-- /.section-form -->
                 <?php endif; ?>
                 
+            <?php endif;
+            
+            if( get_row_layout() == 'map' ): ?>
+                <section class="section-contact">
+                    <div class="section__map">
+                        <?= get_sub_field('embed_code') ?>
+                    </div><!-- /.section__map -->
+                </section><!-- /.section-contact -->
             <?php endif;
     
         endwhile;

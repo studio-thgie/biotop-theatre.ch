@@ -65,6 +65,44 @@
 
         <?php get_template_part('parts/content'); ?>
 
+        <?php if(get_field('header_slideshow')): ?>
+            <section class="section-gallery">
+                <div class="section__slider">
+                    <div class="slider-gallery js-slider-gallery">
+                        <div class="slider__clip swiper">
+                            <div class="slider__slides swiper-wrapper">
+                                <?php foreach(get_field('header_slideshow') as $key => $image): ?>
+                                    <div class="slider__slide swiper-slide">
+                                        <a href="<?= wp_get_attachment_image_url( $image, 'full' ) ?>?download" target="_blank">
+                                            <div class="slider__image">
+                                                <img src="<?= wp_get_attachment_image_url( $image, 'header-slideshow' ) ?>" alt="">
+                                            </div><!-- /.slider__image -->
+
+                                            <div class="slider__icon">
+                                                <img src="<?= get_template_directory_uri() ?>/assets/images/svg/arrow-download.svg" alt="">
+                                            </div>
+                                        </a>
+                                    </div><!-- /.slider__slide -->
+                                <?php endforeach; ?>
+                            </div><!-- /.slider__slides -->
+
+                            <div class="slider__navigation">
+                                <div class="slider__arrow slider__arrow--prev">
+                                    <img src="<?= get_template_directory_uri() ?>/assets/images/svg/arrow-right-white.svg" alt="">
+                                </div><!-- /.slider__arrow -->
+                                
+                                <div class="slider__arrow slider__arrow--next">
+                                    <img src="<?= get_template_directory_uri() ?>/assets/images/svg/arrow-right-white.svg" alt="">
+                                </div><!-- /.slider__arrow -->
+                            </div><!-- /.slider__navigation -->
+
+                            <div class="slider__paging"></div><!-- /.slider__paging -->
+                        </div><!-- /.slider__clip -->
+                    </div><!-- /.slider js-slider -->
+                </div><!-- /.section__slider -->
+            </section><!-- /.section-gallery -->
+        <?php endif; ?>
+
         <?php if( have_rows('content_block') ): ?>
 		    <section class="section-details">
                 <?php while ( have_rows('content_block') ) : the_row(); ?>

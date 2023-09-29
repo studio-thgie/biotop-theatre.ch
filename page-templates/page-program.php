@@ -42,7 +42,7 @@
                             </li>
                         <?php endif; ?>
                         <?php foreach( $field['choices'] as $k => $v ): ?>
-                            <li <?= $k == 'incubo' ? 'class="list__item-blue"' : '' ?>>
+                            <li <?= $k == 'incubo' ? 'class="list__item-blue"' : '' ?> <?= $k == 'hors-saison' ? 'class="list__item-black"' : '' ?>>
                                 <a href="?category=<?= $k ?>"><?= $v ?></a>
                             </li>
                         <?php endforeach; ?>
@@ -50,10 +50,6 @@
 						<li>
 							<a href="?school"><?php _e( 'school', 'biotop' ); ?></a>
 						</li>
-						
-						<!--<li class="list__item-black">
-							<a href="?off-season"><?php _e( 'off-season', 'biotop' ); ?></a>
-						</li>-->
 					</ul><!-- /.list-filters -->
 				</div><!-- /.shell -->
 			</div><!-- /.section__filters -->
@@ -111,7 +107,7 @@
 
             ?>
 
-                <div class="section__entry <?= get_field('event_category', $p->ID)['value'] == 'incubo' ? 'section__entry--blue' : '' ?>"> <!--  section__entry--white -->
+                <div class="section__entry <?= get_field('event_category', $p->ID)['value'] == 'incubo' ? 'section__entry--blue' : '' ?> <?= get_field('event_category', $p->ID)['value'] == 'hors-saison' ? 'section__entry--white' : '' ?>">
 				<div class="shell">
 					<div class="card-event">
 						<div class="card__tags">

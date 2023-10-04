@@ -7,8 +7,10 @@
         
             load_theme_textdomain( 'biotop', get_template_directory() . '/languages' );
             register_nav_menus( array(
-                'main'   => __( 'Main Menu', 'biotop' ),
-                'footer'   => __( 'Footer', 'biotop' )
+                'main_de'   => __( 'Main Menu DE', 'biotop' ),
+                'footer_de'   => __( 'Footer DE', 'biotop' ),
+                'main_fr'   => __( 'Main Menu FR', 'biotop' ),
+                'footer_fr'   => __( 'Footer FR', 'biotop' ),
             ) );
             add_theme_support( 'post-thumbnails' );
 

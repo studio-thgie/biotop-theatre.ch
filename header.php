@@ -53,8 +53,9 @@
 				<div class="shell">
 					<nav class="nav">
 						<?php wp_nav_menu([
-								'menu' => 'main',
-								'container' => ''
+								'theme_location' => 'main_'.explode('-', get_bloginfo('language'))[0],
+								'container' => '',
+								'fallback_cb' => false
 							]);
 						?>
 					</nav>

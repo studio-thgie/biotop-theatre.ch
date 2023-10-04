@@ -79,6 +79,22 @@
                 </section><!-- /.section-image-content -->
             <?php endif;
             
+            if( get_row_layout() == 'graphic' ): ?>
+                <section class="section-content" style="background-color: <?= get_sub_field('color') ?>">
+                    <div class="shell">
+                        <div class="section__content">
+                            <?php 
+                                $image = get_sub_field('image');
+                                $size = 'full';
+                                if( $image ) {
+                                    echo wp_get_attachment_image( $image, $size );
+                                }
+                            ?>
+                        </div><!-- /.section__content -->
+                    </div><!-- /.shell -->
+                </section><!-- /.section-image-content -->
+            <?php endif;
+            
             if( get_row_layout() == 'gallery' ): ?>
                 <section class="section-gallery">
                     <div class="section__slider">
@@ -209,8 +225,12 @@
                                 <li>
                                     <div class="shell">
                                         <a href="<?= $file['url'] ?>" download>
-                                            <?= $file['filename'] ?>
-                                    
+                                            <?php
+                                                $filename = preg_replace('/\.\w+$/', '', $file['filename']);
+                                                $filename = str_replace(['-', '_'], ' ', $filename);
+                                                $filename = ucwords($filename);
+                                            ?>
+                                            <?= $filename ?>
                                             <img src="<?= get_template_directory_uri() ?>/assets/images/svg/arrow-right.svg" alt="">
                                         </a>
                                     </div><!-- /.shell -->

@@ -68,9 +68,9 @@
                                             </span><?php endif; ?>
                                         </div><!-- /.card__wrapper -->
 
-                                        <?php if ( !empty( get_the_content() ) ): ?>
+                                        <?php if(get_field('biopgraphy')): ?>
                                         <div class="card__content js-content">
-                                            <?php the_content(); ?>
+                                            <?php get_field('biography'); ?>
                                         </div><!-- /.card__content -->
 
                                         <div class="card__actions js-expand">

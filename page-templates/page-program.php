@@ -183,7 +183,7 @@
 						</div><!-- /.card__wrapper -->
 							
 						<div class="card__content">
-							<p>Description for the play. From one line to at most four lines. Description for the play. From one line to at most four lines.</p>
+							<p><?php the_field('subtitle', $p->ID) ?></p>
 						</div><!-- /.card__content -->
 
 						<div class="card__entry">

@@ -51,7 +51,7 @@
 				<div class="footer__nav">
 					<nav class="nav-footer">
 						<?php wp_nav_menu([
-								'menu' => 'footer',
+								'theme_location' => 'footer_'.explode('-', get_bloginfo('language'))[0],
 								'container' => '',
 								'fallback_cb' => false
 							]);

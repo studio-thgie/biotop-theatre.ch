@@ -47,7 +47,7 @@
                         <?php endif; ?>
 					
 						<div class="section__info">
-                            <?php get_template_part('parts/production-meta', ['pid' => $pid]); ?>
+                            <?php get_template_part('parts/production-meta', null, ['pid' => $pid]); ?>
 						</div><!-- /.section__info -->
 					</div><!-- /.shell -->
 				</div><!-- /.section__entry -->

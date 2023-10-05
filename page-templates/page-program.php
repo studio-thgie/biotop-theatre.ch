@@ -204,10 +204,16 @@
 									
 									<li>
 										<div class="duration-icon">
-											<img src="./assets/images/svg/duration-icon.svg" alt="">
+											<img src="<?= get_template_directory_uri() ?>/assets/images/svg/duration-icon.svg" alt="">
 											<p><?php the_field('duration', $p->ID); ?></p>
 										</div><!-- /.duration-icon -->
 									</li>
+
+                                    <?php if(get_field('for_school')): ?>
+                                        <li>
+                                            <img src="<?= get_template_directory_uri() ?>/assets/images/svg/school-icon.svg" alt="">
+                                        </li>
+                                    <?php endif; ?>
 								</ul>
 							</div><!-- /.card__info -->
 						</div><!-- /.card__entry -->

@@ -1,15 +1,16 @@
 <div class="section__icons">
+    
     <ul>
-        <?php if(get_field('genre', $pid)) : ?>
+        <?php if(get_field('genre', $args['pid'])) : ?>
             <li>
                 <!-- <img src="<?= get_template_directory_uri() ?>/assets/images/svg/theater-icon.svg" alt=""> -->
-                <!-- <?= apply_filters('the_content', get_post_field('post_content', get_field('genre', $pid)->ID)); ?>-->
+                <!-- <?= apply_filters('the_content', get_post_field('post_content', get_field('genre', $args['pid'])->ID)); ?>-->
             </li>
         <?php endif; ?>
         
         <li>
             <div class="age-icon">
-                <p><?php the_field('age', $pid); ?>+</p>
+                <p><?php the_field('age', $args['pid']); ?>+</p>
             </div><!-- /.age-icon -->
         </li>
         
@@ -17,18 +18,18 @@
             <div class="duration-icon">
                 <img src="<?= get_template_directory_uri() ?>/assets/images/svg/duration-icon.svg" alt="">
                 
-                <p><?php the_field('duration', $pid); ?></p>
+                <p><?php the_field('duration', $args['pid']); ?></p>
             </div><!-- /.duration-icon -->
         </li>
 
-        <?php if ( get_field('language', $pid) ) : ?>
+        <?php if ( get_field('language', $args['pid']) ) : ?>
 
         <?php
 
-            if(get_field('override_language', $pid)) {
-                $langs = get_field('override_language', $pid);
+            if(get_field('override_language', $args['pid'])) {
+                $langs = get_field('override_language', $args['pid']);
             } else {
-                $langs = get_field('language', $pid);
+                $langs = get_field('language', $args['pid']);
             }
 
         ?>

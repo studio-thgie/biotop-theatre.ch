@@ -56,13 +56,15 @@
             <?php endif;
     
             if( get_row_layout() == 'text' ): ?>
-                <section class="section-content">
-                    <div class="shell">
-                        <div class="section__content">
-                            <?= get_sub_field('text'); ?>
-                        </div><!-- /.section__content -->
-                    </div><!-- /.shell -->
-                </section><!-- /.section-image-content -->
+                <section class="section-details">
+                    <div class="section__entry">
+                        <div class="shell">
+                            <div class="section__content">
+                                <?= get_sub_field('text'); ?>
+                            </div><!-- /.section__content -->
+                        </div><!-- /.shell -->
+                    </div><!-- /.section__entry -->
+                </section><!-- /.section-details -->
             <?php endif;
     
             if( get_row_layout() == 'image' ): ?>

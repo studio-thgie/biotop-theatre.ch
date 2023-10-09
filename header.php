@@ -12,6 +12,17 @@
 	<link rel="shortcut icon" type="image/x-icon" href="<?= get_template_directory_uri() ?>/assets/images/favicon.ico" />
 
     <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/style.css">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161843300-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-161843300-1');
+    </script>
+
     <?php wp_head(); ?>
 </head>
 <body>

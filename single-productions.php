@@ -108,6 +108,23 @@
 
         <?php get_template_part('parts/content'); ?>
 
+        <?php if( have_rows('content_block') ): ?>
+		    <section class="section-details">
+                <?php while ( have_rows('content_block') ) : the_row(); ?>
+                    <div class="section__entry">
+                        <div class="shell">
+                            <div class="section__content">
+                                <?php if(get_sub_field('title')): ?>
+                                    <h3><?php the_sub_field('title'); ?></h3>
+                                <?php endif; ?>
+                                <?php the_sub_field('content'); ?>
+                            </div><!-- /.section__content -->
+                        </div><!-- /.shell -->
+                    </div><!-- /.section__entry -->
+                <?php endwhile; ?>
+            </section><!-- /.section-details -->
+        <?php endif; ?>
+
         <?php if(get_field('header_slideshow')): ?>
             <section class="section-gallery">
                 <div class="section__slider">
@@ -118,7 +135,7 @@
                                     <div class="slider__slide swiper-slide">
                                         <a href="<?= wp_get_attachment_image_url( $image, 'full' ) ?>?download" target="_blank">
                                             <div class="slider__image">
-                                                <img src="<?= wp_get_attachment_image_url( $image, 'header-slideshow' ) ?>" alt="">
+                                                <img src="<?= wp_get_attachment_image_url( $image, 'large' ) ?>" alt="">
                                             </div><!-- /.slider__image -->
 
                                             <div class="slider__icon">
@@ -144,23 +161,6 @@
                     </div><!-- /.slider js-slider -->
                 </div><!-- /.section__slider -->
             </section><!-- /.section-gallery -->
-        <?php endif; ?>
-
-        <?php if( have_rows('content_block') ): ?>
-		    <section class="section-details">
-                <?php while ( have_rows('content_block') ) : the_row(); ?>
-                    <div class="section__entry">
-                        <div class="shell">
-                            <div class="section__content">
-                                <?php if(get_sub_field('title')): ?>
-                                    <h3><?php the_sub_field('title'); ?></h3>
-                                <?php endif; ?>
-                                <?php the_sub_field('content'); ?>
-                            </div><!-- /.section__content -->
-                        </div><!-- /.shell -->
-                    </div><!-- /.section__entry -->
-                <?php endwhile; ?>
-            </section><!-- /.section-details -->
         <?php endif; ?>
 
 <?php get_footer(); ?>

@@ -5,11 +5,13 @@
         while ( have_rows('content') ) : the_row();
     
             if( get_row_layout() == 'header' ): ?>
-                <div class="block-title">
-                    <div class="shell">
-                        <h2><?= get_sub_field('text'); ?></h2>
-                    </div><!-- /.shell -->
-                </div><!-- /.block-title -->
+                <section class="section-details">
+                    <div class="section__entry">
+                        <div class="shell">
+                            <h2><?= get_sub_field('text'); ?></h2>
+                        </div><!-- /.shell -->
+                    </div><!-- /.section__entry -->
+                </section><!-- /.section-details -->
             <?php endif;
                     
             if( get_row_layout() == 'ticker' ): ?>
@@ -249,7 +251,24 @@
                         <div class="section__form">
                             <div class="shell">
                                 <div class="form form--small">
-                                    <?= do_shortcode(get_sub_field('shortcode')); ?>
+                                    <?php if(get_sub_field('shortcode')): ?>
+                                        <?= do_shortcode(get_sub_field('shortcode')); ?>
+                                    <?php endif; ?>
+                                    <?php if(get_sub_field('embed_code')): ?>
+                                        <?= get_sub_field('embed_code') ?>
+                                    <?php endif; ?>
+
+                                    <script>
+
+                                        function set_target_group() {
+                                            let tags = document.querySelector('select[name="tags"]');
+                                            let target = tags.options[tags.selectedIndex].dataset.target;
+                                            let form = document.querySelector('form.newsletter');
+
+                                            form.action = form.dataset[target];
+                                        }
+
+                                    </script>
                                 </div><!-- /.form -->
                             </div><!-- /.shell -->
                         </div><!-- /.section__form -->
@@ -260,7 +279,12 @@
                         <div class="shell">
                             <div class="section__form">
                                 <div class="form form--placeholders">
-                                    <?= do_shortcode(get_sub_field('shortcode')); ?>
+                                    <?php if(get_sub_field('shortcode')): ?>
+                                        <?= do_shortcode(get_sub_field('shortcode')); ?>
+                                    <?php endif; ?>
+                                    <?php if(get_sub_field('embed_code')): ?>
+                                        <?= get_sub_field('embed_code') ?>
+                                    <?php endif; ?>
                                 </div><!-- /.form -->
                             </div><!-- /.section__form -->
                         </div><!-- /.shell -->

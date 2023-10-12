@@ -74,7 +74,7 @@
 
     <script type="text/javascript" src="<?= get_template_directory_uri() ?>/assets/vendor/jquery-3.6.3.min.js"></script>
 	<script type="text/javascript" src="<?= get_template_directory_uri() ?>/assets/vendor/infiniteslidev2.min.js"></script>
-    <script type="module" crossorigin src="<?= get_template_directory_uri() ?>/assets/app23.js"></script>
+    <script type="module" crossorigin src="<?= get_template_directory_uri() ?>/assets/app24.js"></script>
 
 	<script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

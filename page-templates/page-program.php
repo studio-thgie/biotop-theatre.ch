@@ -172,11 +172,13 @@
                                 ?>
 
                                 <div class="card__lang">
-                                    <ul class="list-lang">
+                                    <div class="list-lang">
+                                        <div class="list-lang__inner">
                                         <?php foreach ($langs as $key => $lang): ?>
-                                            <li><?= $lang ?></li>
+                                            <span><?= $lang ?></span>
                                         <?php endforeach; ?>
-                                    </ul>
+                                        </div><!-- /.list-lang__inner -->
+                                    </div>
                                 </div><!-- /.card__lang -->
                             
                             <?php endif; ?>

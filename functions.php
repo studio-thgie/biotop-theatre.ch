@@ -41,8 +41,8 @@
 
 
 
-        /**
-     * Flus JSON generation
+    /**
+     * Flux JSON generation
      */
     add_action('rest_api_init', function () {
         register_rest_route( 'biotop/v1', 'events',array(

@@ -663,15 +663,22 @@ textarea {
 \* ------------------------------------------------------------ */
 @font-face {
   font-family: "Epoque Grotesk";
-  src: url("./EpoqueGrotesk-Bold.woff2") format("woff2"), url("./EpoqueGrotesk-Bold.woff") format("woff");
+  src: url("assets/fonts/EpoqueGrotesk/EpoqueGrotesk-Bold.woff2") format("woff2"), url("assets/fonts/EpoqueGrotesk/EpoqueGrotesk-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Beausite Classic Web";
-  src: url("./BeausiteClassicWeb-Regular.woff2") format("woff2"), url("./BeausiteClassicWeb-Regular.woff") format("woff");
-  font-weight: 400;
+  font-family: "Beausite Classic";
+  src: url("assets/fonts/BeausiteClassic/BeausiteClassic-Regular.woff2") format("woff2"), url("assets/fonts/BeausiteClassic/BeausiteClassic-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Beausite Classic";
+  src: url("assets/fonts/BeausiteClassic/BeausiteClassic-Bold.woff2") format("woff2"), url("assets/fonts/BeausiteClassic/BeausiteClassic-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -684,7 +691,7 @@ html {
 body {
   min-width: 320px;
   background: #fff;
-  font-family: "Beausite Classic Web", sans-serif;
+  font-family: "Beausite Classic", sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.2;
@@ -1294,7 +1301,7 @@ blockquote:last-child {
   text-transform: none;
   font-weight: 400;
   margin-bottom: 0.3rem;
-  font-family: "Beausite Classic Web", sans-serif;
+  font-family: "Beausite Classic", sans-serif;
 }
 .card-team .card__wrapper a {
   display: block;
@@ -1659,6 +1666,62 @@ blockquote:last-child {
   visibility: visible;
 }
 /* ------------------------------------------------------------ *\
+	Icons
+\* ------------------------------------------------------------ */
+.ico-theater {
+  display: inline-flex;
+  align-items: center;
+  font-family: "Beausite Classic", sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.1;
+  font-style: normal;
+}
+.ico-theater svg {
+  margin-right: 0.5rem;
+}
+.ico-theater span {
+  display: block;
+}
+.ico-age-group {
+  font-size: 1.313rem;
+  font-weight: 700;
+  font-style: normal;
+  position: relative;
+  padding: 1.2rem 0.8rem;
+  line-height: 1;
+  display: inline-block;
+}
+.ico-age-group svg {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform: translateY(-50%);
+}
+.ico-age-group svg path {
+  stroke-width: 0.2rem;
+}
+.ico-age-group--medium svg path {
+  stroke-width: 0.15rem;
+}
+.ico-age-group--large svg path {
+  stroke-width: 0.12rem;
+}
+.ico-superscript {
+  font-size: 1.2rem;
+  line-height: 1;
+  display: inline-block;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 700;
+}
+.ico-superscript sup {
+  text-transform: none;
+  font-size: 66.66%;
+}
+/* ------------------------------------------------------------ *\
 	Lang Switcher
 \* ------------------------------------------------------------ */
 .lang-switcher {
@@ -1731,31 +1794,66 @@ blockquote:last-child {
 	List Lang
 \* ------------------------------------------------------------ */
 .list-lang {
-  min-width: 7.2rem;
-  list-style-type: none;
-  display: flex;
-  text-transform: uppercase;
+  font-size: 1.6rem;
+  line-height: 1;
   font-weight: 700;
-  margin: -0.3rem;
-  background-image: url(./images/svg/lang-box.svg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 0.2rem 0.5rem 0.8rem 1.26rem;
-}
-.list-lang li {
-  padding: 0.3rem;
-}
-.list-lang--single {
-  background-image: url(./images/svg/lang-box-single.svg);
-  background-size: covern;
-  min-width: 4.15rem;
-  padding: 0.3rem 0.6rem 0.8rem 0.6rem;
-  display: flex;
+  position: relative;
+  font-style: normal;
+  text-transform: uppercase;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
+  white-space: nowrap;
+  padding-left: 1.4rem;
+}
+.list-lang:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: calc(100% - 1.4rem);
+  background-image: url(../assets/images/svg/ico-speech-bubble-bigger.svg);
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+}
+.list-lang .list-lang__inner {
+  padding: 0.6rem 0.8rem 1.3rem 0;
+  display: inline-block;
+  position: relative;
+}
+.list-lang .list-lang__inner:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-image: url(../assets/images/svg/ico-speech-bubble-bigger.svg);
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  width: 1.4rem;
+}
+.list-lang span {
+  margin-right: 0.4rem;
+}
+.list-lang span:last-of-type {
   margin: 0;
 }
-.list-lang--single li {
-  padding: 0;
+.list-lang svg {
+  width: auto;
+  position: absolute;
+  top: 0;
+  height: calc(100% + 0.03rem);
+}
+.list-lang svg.bubble-left {
+  left: 0;
+  height: calc(100% + 0.6rem);
+}
+.list-lang svg.bubble-right {
+  right: 0;
 }
 /* ------------------------------------------------------------ *\
 	Menu Toggle
@@ -2096,7 +2194,7 @@ blockquote:last-child {
 .section-contact .section__content ul h3 {
   font-weight: 400;
   text-transform: none;
-  font-family: "Beausite Classic Web", sans-serif;
+  font-family: "Beausite Classic", sans-serif;
   margin-bottom: 0;
 }
 .section-contact .section__content ul p {
@@ -2174,7 +2272,7 @@ blockquote:last-child {
 }
 .section-content .section__content ol h3,
 .section-content .section__content ol h4 {
-  font-family: "Beausite Classic Web", sans-serif;
+  font-family: "Beausite Classic", sans-serif;
   text-transform: none;
   font-weight: 400;
   margin-bottom: 0.5rem;
@@ -3004,10 +3102,12 @@ blockquote:last-child {
   list-style-type: none;
   display: flex;
   align-items: center;
-  margin: 0 -1rem;
+  flex-wrap: wrap;
+  margin: 0 -1rem -1rem;
 }
 .section-tickets .section__icons > ul > li {
   padding: 0 1rem;
+  margin-bottom: 1rem;
 }
 .section-tickets .section__content {
   font-size: 2rem;
@@ -3223,7 +3323,7 @@ blockquote:last-child {
   Shell
 \* ------------------------------------------------------------ */
 .shell {
-  max-width: calc( 126rem + 13rem * 2 );
+  max-width: calc(126rem + 13rem * 2);
   padding-left: 13rem;
   padding-right: 13rem;
   margin: auto;
@@ -3231,52 +3331,52 @@ blockquote:last-child {
 }
 @media (max-width: 1199px) {
   .shell {
-    max-width: calc( 126rem + 3.6rem * 2 );
+    max-width: calc(126rem + 3.6rem * 2);
     padding-left: 3.6rem;
     padding-right: 3.6rem;
   }
 }
 @media (max-width: 374px) {
   .shell {
-    max-width: calc( 126rem + 1.5rem * 2 );
+    max-width: calc(126rem + 1.5rem * 2);
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 .shell--alt {
-  max-width: calc( 126rem + 9.3rem * 2 );
+  max-width: calc(126rem + 9.3rem * 2);
   padding-left: 9.3rem;
   padding-right: 9.3rem;
 }
 @media (max-width: 1199px) {
   .shell--alt {
-    max-width: calc( 126rem + 3.6rem * 2 );
+    max-width: calc(126rem + 3.6rem * 2);
     padding-left: 3.6rem;
     padding-right: 3.6rem;
   }
 }
 @media (max-width: 374px) {
   .shell--alt {
-    max-width: calc( 126rem + 1.5rem * 2 );
+    max-width: calc(126rem + 1.5rem * 2);
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 .shell--large {
-  max-width: calc( 126rem + 3.6rem * 2 );
+  max-width: calc(126rem + 3.6rem * 2);
   padding-left: 3.6rem;
   padding-right: 3.6rem;
 }
 @media (max-width: 1199px) {
   .shell--large {
-    max-width: calc( 126rem + 3.6rem * 2 );
+    max-width: calc(126rem + 3.6rem * 2);
     padding-left: 3.6rem;
     padding-right: 3.6rem;
   }
 }
 @media (max-width: 374px) {
   .shell--large {
-    max-width: calc( 126rem + 1.5rem * 2 );
+    max-width: calc(126rem + 1.5rem * 2);
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
@@ -3452,7 +3552,7 @@ blockquote:last-child {
 		Additional Styles
 \* ------------------------------------------------------------ */
 /**
- * Swiper 10.1.0
+ * Swiper 10.3.1
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -3460,7 +3560,7 @@ blockquote:last-child {
  *
  * Released under the MIT License
  *
- * Released on: August 1, 2023
+ * Released on: September 28, 2023
  */
 /* FONT_START */
 @font-face {
@@ -3981,7 +4081,7 @@ button.swiper-pagination-bullet {
 .swiper-scrollbar {
   border-radius: var(--swiper-scrollbar-border-radius, 10px);
   position: relative;
-  -ms-touch-action: none;
+  touch-action: none;
   background: var(--swiper-scrollbar-bg-color, rgba(0, 0, 0, 0.1));
 }
 .swiper-scrollbar-disabled > .swiper-scrollbar,
@@ -4074,7 +4174,9 @@ button.swiper-pagination-bullet {
 .swiper-fade .swiper-slide .swiper-slide {
   pointer-events: none;
 }
-.swiper-fade .swiper-slide-active,
+.swiper-fade .swiper-slide-active {
+  pointer-events: auto;
+}
 .swiper-fade .swiper-slide-active .swiper-slide-active {
   pointer-events: auto;
 }

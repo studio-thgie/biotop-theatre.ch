@@ -68,23 +68,23 @@
 
                             $loop_count = 0;
                             $loop_total = $loop->found_posts;
+                            $reservation = false;
 
                         ?>
-					
+
 						<div class="section__info">
                             <?php get_template_part('parts/production-meta', null, ['pid' => get_the_ID()]); ?>
 
-                            <?php if($loop->have_posts()): $loop->the_post(); ?>
+                            <?php while($loop->have_posts() && !$reservation): $loop->the_post(); ?>
 
                                 <?php
-                        
-                                    $reservation = true;
-                                    $link = get_field('tickets_page', 'option') . '?id=' . get_the_ID();
-                                    $target = '_self';
                                 
                                     if(!is_null(get_field('reservation_activated'))){
                                         $reservation = get_field('reservation_activated');
                                     }
+                        
+                                    $link = get_field('tickets_page', 'option') . '?id=' . get_the_ID();
+                                    $target = '_self';
                                 
                                     if(get_field('reservation_extern') != ''){
                                         $link = get_field('reservation_extern');
@@ -99,7 +99,7 @@
                                     </div>
                                 <?php endif; ?>
 
-                            <?php endif; wp_reset_query(); ?>
+                            <?php endwhile; wp_reset_query(); ?>
 						</div><!-- /.section__info -->
 					</div><!-- /.shell -->
 				</div><!-- /.section__entry -->

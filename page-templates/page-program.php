@@ -211,6 +211,19 @@
 										</div><!-- /.duration-icon -->
 									</li>
 
+                                    <?php if(get_field('brunch')): ?>
+                                        <i class="ico-superscript">
+											Plus
+											<sup>Brunch</sup>
+										</i>
+                                    <?php endif; ?>
+
+                                    <?php if(get_field('transport')): ?>
+                                        <li>
+                                            <img src="<?= get_template_directory_uri() ?>/assets/images/svg/bus-icon.svg" alt="">
+                                        </li>
+                                    <?php endif; ?>
+
                                     <?php if(get_field('for_school')): ?>
                                         <li>
                                             <img src="<?= get_template_directory_uri() ?>/assets/images/svg/school-icon.svg" alt="">

@@ -41,6 +41,25 @@
             </div><!-- /.duration-icon -->
         </li>
 
+        <?php if(get_field('brunch', $args['eid'])): ?>
+            <i class="ico-superscript">
+                Plus
+                <sup>Brunch</sup>
+            </i>
+        <?php endif; ?>
+
+        <?php if(get_field('transport', $args['eid'])): ?>
+            <li>
+                <img src="<?= get_template_directory_uri() ?>/assets/images/svg/bus-icon.svg" alt="">
+            </li>
+        <?php endif; ?>
+
+        <?php if(get_field('for_school', $args['eid'])): ?>
+            <li>
+                <img src="<?= get_template_directory_uri() ?>/assets/images/svg/school-icon.svg" alt="">
+            </li>
+        <?php endif; ?>
+
         <?php if ( get_field('language', $args['pid']) ) : ?>
 
         <?php
@@ -52,7 +71,7 @@
             }
 
         ?>
-        
+
         <li>
             <div class="list-lang">
                 <div class="list-lang__inner">
@@ -63,12 +82,6 @@
             </div>
         </li>
             
-        <?php endif; ?>
-
-        <?php if(get_field('for_school')): ?>
-            <li>
-                <img src="<?= get_template_directory_uri() ?>/assets/images/svg/school-icon.svg" alt="">
-            </li>
         <?php endif; ?>
     </ul>
 </div><!-- /.section__icons -->

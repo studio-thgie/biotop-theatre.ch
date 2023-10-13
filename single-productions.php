@@ -135,7 +135,7 @@
                                     <div class="slider__slide swiper-slide">
                                         <a href="<?= wp_get_attachment_image_url( $image, 'full' ) ?>?download" target="_blank">
                                             <div class="slider__image">
-                                                <img src="<?= wp_get_attachment_image_url( $image, 'large' ) ?>" alt="">
+                                                <img src="<?= wp_get_attachment_image_url( $image, 'header-slideshow' ) ?>" alt="">
                                             </div><!-- /.slider__image -->
 
                                             <div class="slider__icon">

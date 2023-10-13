@@ -12,13 +12,13 @@
 						
 						<ul>
 							<li>
-								<a href="#">
+								<a href="https://www.instagram.com/lagrenouille.bielbienne/">
 									<img src="<?= get_template_directory_uri() ?>/assets/images/svg/instagram-icon.svg" alt="">
 								</a>
 							</li>
 							
 							<li>
-								<a href="#">
+								<a href="https://www.facebook.com/lagrenouille.bielbienne/">
 									<img src="<?= get_template_directory_uri() ?>/assets/images/svg/facebook-icon.svg" alt="">
 								</a>
 							</li>
@@ -28,19 +28,17 @@
 					<div class="footer__location">
 						<p>Incubo</p>
 						
-						<a href="tel:41323333333">Tel. +41 32 333 33 33</a>
-						
 						<a href="mailto:info@incubo.ch">info@incubo.ch</a>
 						
 						<ul>
 							<li>
-								<a href="#">
+								<a href="https://www.instagram.com/incubo_biel_bienne/">
 									<img src="<?= get_template_directory_uri() ?>/assets/images/svg/instagram-icon.svg" alt="">
 								</a>
 							</li>
 							
 							<li>
-								<a href="#">
+								<a href="https://www.facebook.com/incubobielbienne/">
 									<img src="<?= get_template_directory_uri() ?>/assets/images/svg/facebook-icon.svg" alt="">
 								</a>
 							</li>

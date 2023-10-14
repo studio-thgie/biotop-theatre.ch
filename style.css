@@ -53,6 +53,15 @@
 	height: calc(100% - 4px) !important;
 }
 
+.section-nav .section__menu a {
+	word-wrap: anywhere;
+}
+
+.section-nav li {
+	appearance: none;
+	display: block;
+}
+
 /* fix embed map */
 .section__map iframe {
 	width: 100% !important;

@@ -41,7 +41,7 @@
 					</div><!-- /.header__toggle -->
 				
 					<div class="header__logo">
-						<a href="/" class="logo">
+						<a href="/<?= apply_filters( 'wpml_current_language', NULL ) == 'fr' ? 'fr/' : '' ?>" class="logo">
 							<p>Biotop</p>
 						</a>
 					</div><!-- /.header__logo -->
@@ -50,7 +50,7 @@
 						<ul class="lang-switcher">
 							<?php foreach(icl_get_languages() as $lang): ?>
 								<li class="<?= $lang['active'] ? 'current-item' : '' ?>">
-									<a href="<?= $lang['url'] ?>">
+									<a href="<?= $lang['url'] ?><?= $_SERVER['QUERY_STRING'] != '' ? '?'.$_SERVER['QUERY_STRING'] : '' ?>">
 										<?= $lang['language_code'] ?>
 									</a>
 								</li>

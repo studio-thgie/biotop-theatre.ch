@@ -154,7 +154,11 @@
 							<div class="card__title">
 								<h2>
                                     <a href="<?= get_permalink( $p->ID ); ?>">
-                                        <?= get_the_title( $p->ID ); ?>
+                                        <?php if(get_field('override_title')): ?>
+                                            <?= get_field('override_title'); ?>
+                                        <?php else: ?>
+                                            <?= get_the_title( $p->ID ); ?>
+                                        <?php endif; ?>
                                     </a>
                                 </h2>
 							</div><!-- /.card__title -->
@@ -185,8 +189,14 @@
 						</div><!-- /.card__wrapper -->
 							
 						<div class="card__content">
-							<p><?php the_field('subtitle', $p->ID) ?></p>
-						</div><!-- /.card__content -->
+							<p>
+                                <?php if(get_field('override_subtitle')): ?>
+                                    <?php the_field('override_subtitle'); ?>
+                                <?php else: ?>
+                                    <?php the_field('subtitle', $p->ID); ?>
+                                <?php endif; ?>
+                            </p>
+						</div>
 
 						<div class="card__entry">
 							<div class="card__list">

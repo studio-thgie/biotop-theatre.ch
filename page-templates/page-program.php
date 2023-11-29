@@ -208,6 +208,11 @@
 							
 							<div class="card__info">
 								<ul>
+                                    <?php if(get_field('premiere')): ?>
+                                        <li>
+                                            <img src="<?= get_template_directory_uri() ?>/assets/images/svg/Premiere.svg" alt="" style="height: 30px">
+                                        </li>
+                                    <?php endif; ?>
 									<li>
 										<div class="age-icon">
 											<p><?php the_field('age', $p->ID); ?>+</p>
@@ -228,6 +233,12 @@
 										</i>
                                     <?php endif; ?>
 
+                                    <?php if(get_field('apero')): ?>
+                                        <li>
+                                            <img src="<?= get_template_directory_uri() ?>/assets/images/svg/Apero.svg" alt="" style="height: 30px">
+                                        </li>
+                                    <?php endif; ?>
+
                                     <?php if(get_field('transport')): ?>
                                         <li>
                                             <img src="<?= get_template_directory_uri() ?>/assets/images/svg/bus-icon.svg" alt="">
@@ -237,6 +248,20 @@
                                     <?php if(get_field('for_school')): ?>
                                         <li>
                                             <img src="<?= get_template_directory_uri() ?>/assets/images/svg/school-icon.svg" alt="">
+                                        </li>
+                                    <?php endif; ?>
+
+                                    <?php if(get_field('atelier')): ?>
+                                        
+                                        <li>
+                                            <img src="<?= get_template_directory_uri() ?>/assets/images/svg/Atelier.svg" alt="" style="height: 30px">
+                                        </li>
+                                    <?php endif; ?>
+
+                                    <?php if(get_field('backstage')): ?>
+                                        
+                                        <li>
+                                            <img src="<?= get_template_directory_uri() ?>/assets/images/svg/Backstage.svg" alt="" style="height: 30px">
                                         </li>
                                     <?php endif; ?>
 								</ul>
@@ -264,6 +289,30 @@
                             <div class="card__actions">
                                 <a href="<?php echo $link; ?>" target="<?php echo $target; ?>" class="btn btn--block">Tickets</a>
                             </div><!-- /.card__actions -->
+                        <?php endif; ?>
+
+                        <?php if(get_field('canceled')): ?>
+                            <div class="card__badge">
+							<span>
+                                <?php _e('canceled', 'biotop') ?>
+							</span>
+						</div><!-- /.card__badge -->
+                        <?php endif; ?>
+
+                        <?php if(get_field('postponed')): ?>
+                            <div class="card__badge">
+							<span>
+                                <?php _e('postponed', 'biotop') ?>
+							</span>
+						</div><!-- /.card__badge -->
+                        <?php endif; ?>
+
+                        <?php if(get_field('sold')): ?>
+                            <div class="card__badge">
+							<span>
+                                <?php _e('sold', 'biotop') ?>
+							</span>
+						</div><!-- /.card__badge -->
                         <?php endif; ?>
 
 					</div><!-- /.card-event -->

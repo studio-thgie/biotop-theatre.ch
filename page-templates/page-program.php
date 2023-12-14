@@ -292,7 +292,7 @@
                         <?php endif; ?>
 
                         <?php if(get_field('canceled')): ?>
-                            <div class="card__badge">
+                            <div class="card__badge card__badge--red-back <?= !in_array(get_field('event_category', $p->ID)['value'], ['incubo', 'hors-saison']) ? 'card__badge--yellow-font' : '' ?>">
 							<span>
                                 <?php _e('canceled', 'biotop') ?>
 							</span>
@@ -300,7 +300,7 @@
                         <?php endif; ?>
 
                         <?php if(get_field('postponed')): ?>
-                            <div class="card__badge">
+                            <div class="card__badge card__badge--red-back <?= !in_array(get_field('event_category', $p->ID)['value'], ['incubo', 'hors-saison']) ? 'card__badge--yellow-font' : '' ?>">
 							<span>
                                 <?php _e('postponed', 'biotop') ?>
 							</span>
@@ -308,8 +308,8 @@
                         <?php endif; ?>
 
                         <?php if(get_field('sold')): ?>
-                            <div class="card__badge">
-							<span>
+                            <div class="card__badge <?= get_field('event_category', $p->ID)['value'] == 'incubo' ? 'card__badge--blue-back' : '' ?> <?= !in_array(get_field('event_category', $p->ID)['value'], ['incubo', 'hors-saison']) ? 'card__badge--yellow-font' : '' ?>">
+							<span <?= get_field('event_category', $p->ID)['value'] == 'incubo' ? 'style="border: 1px solid white;"' : '' ?>>
                                 <?php _e('sold', 'biotop') ?>
 							</span>
 						</div><!-- /.card__badge -->
